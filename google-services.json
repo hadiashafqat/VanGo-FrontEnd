@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "125561543855",
+    "project_id": "react-vango",
+    "storage_bucket": "react-vango.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:125561543855:android:4cb4981d41d78e129f885a",
+        "android_client_info": {
+          "package_name": "com.example.VanGo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjM_bzhwCTNX567Tye20ETK0C7-GXkEPE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
