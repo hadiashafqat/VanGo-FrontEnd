@@ -325,18 +325,7 @@ export default function ChildRegScreen2 () {
                                     </TouchableOpacity>
             
                                 </View>
-                                <View>
-                                    <Text>Right Profile</Text>
-                                    <TouchableOpacity className="p-2 bg-transparent rounded-2xl">
-                                        <Image source={require('../assets/icons/upload.png')} className="w-20 h-20 mx-auto" />
-                                    </TouchableOpacity>
-                                </View>
-                                <View>
-                                    <Text>Left Profile</Text>
-                                    <TouchableOpacity style={{marginBottom:20}} className="p-2 bg-transparent rounded-2xl">
-                                        <Image source={require('../assets/icons/upload.png')} className="w-20 h-20 mx-auto" />
-                                    </TouchableOpacity>
-                                </View>
+                                
     
                             </View>
                             {FrontPhotoError ? (

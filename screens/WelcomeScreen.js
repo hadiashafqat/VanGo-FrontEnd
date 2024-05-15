@@ -5,8 +5,10 @@ import { themeColors } from "../theme";
 import { useNavigation } from "@react-navigation/native";
 import axios from "axios";
 import { API_IP } from "../config";
+import { LogBox } from "react-native";
 
 export default function WelcomeScreen() {
+  LogBox.ignoreAllLogs();
   const navigation = useNavigation();
 
   return (

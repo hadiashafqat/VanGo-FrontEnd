@@ -81,11 +81,9 @@ export default function ChildRegScreen() {
 
   const schools = [
     "APS Hamayun",
-    "SLS",
-    "Roots",
     "APS Fort Road",
     "APS Ordinance",
-    "Silver Oaks",
+    
   ];
 
   const isNextButtonEnabled =
