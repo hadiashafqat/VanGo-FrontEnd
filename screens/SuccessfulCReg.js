@@ -58,7 +58,7 @@ const SuccessfulCReg = () => {
         >
           <TouchableOpacity
             // onPress={() => navigation.navigate("Login", {parentID, Email, Password})}
-            onPress={() => navigation.navigate("Login", {parentID, Email, Password})}
+            onPress={() => navigation.navigate("Login")}
             className="py-3 mx-auto bg-yellow-400 rounded-xl"
             style={{ width: 300 }}
           >
