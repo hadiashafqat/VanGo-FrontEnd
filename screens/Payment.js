@@ -10,7 +10,12 @@ function Payment() {
 
   const { parentID, Full_Name, Email, Password, childID } = route.params;
 
-  const Flag = !parentID || !Full_Name || !Email || !Password;
+  const Flag = true;
+  if( Full_Name == null || !Full_Name) {
+    Flag = false;
+  }
+  console.log("fullname: ",Email);
+  
   console.log("Flag: ", Flag);
 
   const [ready, setReady] = useState(false);
@@ -112,7 +117,7 @@ function Payment() {
         Alert.alert("Success", "The Payment was confirmed Successfully");
         setReady(false); // Reset payment readiness state
         // setPrice("");
-        if(Flag == true ) {
+        if(Flag == true) {
           navigation.navigate("SuccessfulChildReg", {parentID, Email, Password, Full_Name});
         }
       } catch (error) {
