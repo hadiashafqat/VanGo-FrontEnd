@@ -1,2 +1,2 @@
 # VanGo-FrontEnd
-Front0end fro the VanGo App
+Front-end of the VanGo Mobile App
