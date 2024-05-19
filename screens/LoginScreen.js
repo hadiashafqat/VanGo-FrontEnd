@@ -201,7 +201,7 @@ export default function LoginScreen() {
               <Text className="text-gray-500 font-semibold">
                   Don't have an account?
               </Text>
-              <TouchableOpacity onPress={()=> navigation.navigate('ChildRegistration', { parentID })}>
+              <TouchableOpacity onPress={()=> navigation.navigate('SignUp')}>
                   <Text className="font-semibold text-yellow-500"> Sign Up</Text>
               </TouchableOpacity>
           </View>

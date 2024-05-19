@@ -28,10 +28,18 @@ export default function ChildProfiles () {
     const fetchChildData = async () => {
         try {
             const response = await axios.get(`${API_IP}/get_children_data/${user.uid}`);
-            setChildrenData(response.data);
-        } catch (error) {
-            console.log("Failed to get child data ", error);
-        }
+            if (response.status === 200) {
+              setChildrenData(response.data);
+            } else if (response.status === 404) {
+              setChildrenData([]);
+            }
+          } catch (error) {
+            if (error.response && error.response.status === 404) {
+              setChildrenData([]);
+            } else {
+              console.log("Failed to get child data", error);
+            }
+          }
     };
 
     useEffect(() => {

@@ -432,7 +432,7 @@ export default function Dashboard(props) {
 
           {/* Unregister Child Card */}
           <TouchableOpacity
-            // onPress={() => navigation.navigate('Dashboard', { ...item })}
+            onPress={() => navigation.navigate("UnregisterChild",{childID})}
             style={{
               width: "100%",
             }}
