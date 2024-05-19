@@ -10,7 +10,7 @@ function Payment() {
 
   const { parentID, Full_Name, Email, Password, childID } = route.params;
 
-  const Flag = true;
+  var Flag = true;
   if( Full_Name == null || !Full_Name) {
     Flag = false;
   }

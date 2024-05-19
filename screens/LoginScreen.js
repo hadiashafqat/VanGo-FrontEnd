@@ -36,25 +36,25 @@ export default function LoginScreen() {
     }
   }, [route.params]);
 
-  // useEffect(() => {
-  //   // Check if parentId exists in the current user
-  //   const parentId = auth.currentUser ? auth.currentUser.uid : null;
+  useEffect(() => {
+    // Check if parentId exists in the current user
+    const parentId = auth.currentUser ? auth.currentUser.uid : null;
 
-  //   if (parentId) {
-  //     // Send axios request to fetch automatic login credentials
-  //     axios.post(`${API_IP}/get_automatic_login_credentials/${parentId}`)
-  //       .then(response => {
-  //         const { email, password } = response.data;
-  //         setEmail(email);
-  //         setPassword(password);
-  //         console.log("fetchimg email and password");
-  //         login();
-  //       })
-  //       .catch(error => {
-  //         console.error("Error fetching automatic login credentials:", error);
-  //       });
-  //   }
-  // }, []);
+    if (parentId) {
+      // Send axios request to fetch automatic login credentials
+      axios.post(`${API_IP}/get_automatic_login_credentials/${parentId}`)
+        .then(response => {
+          const { email, password } = response.data;
+          setEmail(email);
+          setPassword(password);
+          console.log("fetchimg email and password");
+          login();
+        })
+        .catch(error => {
+          console.error("Error fetching automatic login credentials:", error);
+        });
+    }
+  }, []);
 
   const handleEmailChange = (text) => {
     setEmail(text);
