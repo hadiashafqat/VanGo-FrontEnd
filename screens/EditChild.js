@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, Image } from 'react-native';
+import { View, Text, TouchableOpacity, Image, Alert } from 'react-native';
 import { useNavigation , useRoute} from '@react-navigation/native';
 import RNPickerSelect from 'react-native-picker-select';
 import ArrowLeftIcon from 'react-native-vector-icons/Feather'; // Ensure this is the correct import based on your icon library
@@ -24,6 +24,7 @@ export default function EditChild() {
     const route = useRoute()
 
     const child_ids = route.params.childID
+    console.log("In edit:",child_ids)
 
     const pickupPlaceHolder = {
         label: 'Select A PickUp Location',
@@ -154,13 +155,16 @@ export default function EditChild() {
             if (response.status === 200) {
                 // Successfully sent data to the backend
                 console.log('Data sent successfully:', response.data);
+                Alert.alert("Success", "Child updated");
          
               } else {
                 // Handle other response statuses
                 console.log('Error:', response.status, response.data);
+                Alert.alert("Error", "Child not updated");
               }
         } catch (error) {
             console.error('Failed to Edit child:', error.response.data);
+            Alert.alert("Error", "Child not updated");
         }
     }
 
