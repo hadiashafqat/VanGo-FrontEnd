@@ -3,7 +3,7 @@ import React, { useEffect , useState } from 'react'
 import { themeColors } from '../theme'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import {ArrowLeftIcon, Bars3Icon, XMarkIcon} from 'react-native-heroicons/solid';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useFocusEffect} from '@react-navigation/native';
 import Carousel from 'react-native-snap-carousel';
 import ChildCard from '../components/ChildCard';
 import axios from 'axios';
@@ -25,20 +25,25 @@ export default function ChildProfiles () {
 
     const user_id = user.uid;
 
-    useEffect(() => {
-        const fetchChildData = async() => {
-            try {
-                const response = await axios.get(`${API_IP}/get_children_data/${user.uid}`) ;
-                setChildrenData(response.data);
-            }
-            catch(error) {
-                console.log("Failed to get childs data ",error);
-            }
+    const fetchChildData = async () => {
+        try {
+            const response = await axios.get(`${API_IP}/get_children_data/${user.uid}`);
+            setChildrenData(response.data);
+        } catch (error) {
+            console.log("Failed to get child data ", error);
         }
+    };
 
+    useEffect(() => {
         fetchChildData();
+    }, []);
 
-    } , []);
+    useFocusEffect(
+        React.useCallback(() => {
+            fetchChildData();
+        }, [])
+    );
+    
 
     const toggleSideBar = () => {
         setSideBarOpen(sideBarOpen => !sideBarOpen)

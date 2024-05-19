@@ -23,6 +23,7 @@ import ViewVideo from '../screens/ViewVideo';
 import LiveLocation from '../screens/LiveLocation';
 import Payment from '../screens/Payment';
 import ComplaintScreen from '../screens/ComplaintScreen';
+import EditChild from '../screens/EditChild';
 
 const Stack = createNativeStackNavigator();
 
@@ -55,7 +56,7 @@ export default function AppNavigation() {
           <Stack.Screen name="ViewVideo" options={{headerShown:false}} component={ViewVideo}/>
           <Stack.Screen name="NavBar" options={{headerShown:false}} component={ChildNav}/>
           <Stack.Screen name="Complaint" options={{headerShown:false}} component={ComplaintScreen}/>
-          {/* <Stack.Screen name="LiveStream" options={{headerShown:false}} component={LiveStream}/> */}
+          <Stack.Screen name="EditChild" options={{headerShown:false}} component={EditChild}/>
           {/* <Stack.Screen name="DrawerNav" component={DrawerNav}/> */}
         </Stack.Navigator>
       </NavigationContainer>
@@ -86,6 +87,7 @@ export default function AppNavigation() {
           <Stack.Screen name="ViewVideo" options={{headerShown:false}} component={ViewVideo}/>
           <Stack.Screen name="NavBar" options={{headerShown:false}} component={ChildNav}/>
           <Stack.Screen name="Complaint" options={{headerShown:false}} component={ComplaintScreen}/>
+          <Stack.Screen name="EditChild" options={{headerShown:false}} component={EditChild}/>
           {/* <Stack.Screen name="LiveStream" options={{headerShown:false}} component={LiveStream}/> */}
           {/* <Stack.Screen name="DrawerNav" component={DrawerNav}/> */}
         </Stack.Navigator>

@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import MapView, { Marker } from 'react-native-maps';
 import { StyleSheet, View, Image } from 'react-native';
-import { useNavigation, useRoute } from '@react-navigation/native';
+import { useNavigation, useRoute, useFocusEffect } from '@react-navigation/native';
 import axios from 'axios';
 import { API_IP } from '../config';
 
@@ -62,6 +62,20 @@ const LiveLocation = () => {
     // Clear the interval when the component is unmounted
     return () => clearInterval(intervalId);
   }, []); // Empty dependency array ensures this effect runs once when the component mounts
+
+
+  useFocusEffect(
+    useCallback(() => {
+      // Fetch initial location data
+      fetchLocationData();
+
+      // Set up a timer to fetch data at regular intervals (e.g., every 1 second)
+      const intervalId = setInterval(fetchLocationData, 1000);
+
+      // Clear the interval when the screen loses focus
+      return () => clearInterval(intervalId);
+    }, [])
+  );
 
   return (
     <View style={styles.container}>
