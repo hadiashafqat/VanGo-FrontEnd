@@ -369,6 +369,66 @@ export default function Dashboard(props) {
               </BlurView>
             </View>
           </TouchableOpacity>
+          
+
+          {/* Edit ChildCard */}
+          <TouchableOpacity
+            onPress={() => navigation.navigate("EditChild",{childID} )}
+            style={{
+              width: "100%",
+            }}
+          >
+            <View
+              // key={coffee.id}
+              style={{
+                width: "100%",
+                marginBottom: 10,
+                borderRadius: 20,
+                overflow: "hidden",
+              }}
+            >
+              <BlurView
+                className="flex-row items-center p-3 rounded-3xl shadow-2xl mb-3 mx-2"
+                tint="dark"
+                intensity={200}
+                style={{
+                  padding: 10,
+                }}
+              >
+                <Image
+                  className="rounded-3xl"
+                  source={require("../assets/images/pages.png")}
+                  style={{
+                    width: 130,
+                    height: 130,
+                    borderRadius: 20,
+                  }}
+                />
+
+                <View className="flex flex-1 space-y-3">
+                  <Text
+                    className="pl-5"
+                    numberOfLines={2}
+                    style={{
+                      color: "#fff",
+                      fontWeight: "600",
+                      fontSize: 25,
+                      marginTop: 10,
+                    }}
+                  >
+                    Edit child Information
+                  </Text>
+                  <Text
+                    className="pl-5"
+                    numberOfLines={1}
+                    style={{ color: "#52555A", fontSize: 12 }}
+                  >
+                    Change Child Information
+                  </Text>
+                </View>
+              </BlurView>
+            </View>
+          </TouchableOpacity>
 
           {/* Unregister Child Card */}
           <TouchableOpacity
@@ -428,8 +488,6 @@ export default function Dashboard(props) {
               </BlurView>
             </View>
           </TouchableOpacity>
-
-
 
         </View>
       </SafeAreaView>
