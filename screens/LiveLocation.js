@@ -55,7 +55,7 @@ const LiveLocation = () => {
       fetchLocationData();
 
       // Set up a timer to fetch data at regular intervals (e.g., every 1 second)
-      const intervalId = setInterval(fetchLocationData, 1000);
+      const intervalId = setInterval(fetchLocationData, 10000);
 
       // Clear the interval when the screen loses focus
       return () => clearInterval(intervalId);
