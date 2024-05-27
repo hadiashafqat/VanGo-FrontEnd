@@ -12,7 +12,7 @@ import { auth } from '../config/firebase';
 import complaint from '../assets/icons/complaint.png';
 import logout from '../assets/icons/logout.png';
 import register from '../assets/icons/edit.png';
-import logo from '../assets/icons/van-logo.png';
+import logo from '../assets/icons/VanGo Logo.png';
 
 const {width, height} = Dimensions.get('window');
 
@@ -92,7 +92,7 @@ export default function ChildProfiles () {
             </SafeAreaView>
 
             {sideBarOpen && (
-                <View className="bg-yellow-400" style={{position:"absolute", left: 0, width: '60%', height: '100%', zIndex: 999}}>
+                <View className='bg-yellow-500' style={{position:"absolute", left: 0, width: '60%', height: '100%', zIndex: 999, }}>
                     <TouchableOpacity
                             onPress={toggleSideBar}
                             className="p-2 rounded-tr-2xl rounded-bl-2xl ml-auto"
@@ -101,9 +101,9 @@ export default function ChildProfiles () {
                             <XMarkIcon size="20" color="black" />
                     </TouchableOpacity>
                     
-                    <View style={{flexDirection:'row', gap:10, marginLeft:10}}>
-                        <Image source={logo} style={{width:40, height:40, marginLeft:10}}></Image>
-                        <Text style={{fontSize:30, color:"black", textAlign:'center'}}>VANGO</Text>
+                    <View style={{flexDirection:'row', gap:10, marginLeft:15}}>
+                        <Image source={logo} style={{width:60, height:60}}></Image>
+                        <Text style={{fontSize:30, color:"black", textAlign:'center', justifyContent:'center', alignItems:'center', paddingTop:5}}>VANGO</Text>
                     </View>
 
                     <View style={{marginLeft:10, justifyContent:'space-between', marginTop:30, marginRight:10, flex:1}}>

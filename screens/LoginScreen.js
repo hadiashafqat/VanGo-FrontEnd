@@ -32,7 +32,6 @@ export default function LoginScreen() {
       const { Email, Password } = route.params;
       setEmail(Email);
       setPassword(Password);
-      // login();
     }
   }, [route.params]);
 
@@ -48,7 +47,7 @@ export default function LoginScreen() {
           setEmail(email);
           setPassword(password);
           console.log("fetchimg email and password");
-          login();
+          //login();
         })
         .catch(error => {
           console.error("Error fetching automatic login credentials:", error);

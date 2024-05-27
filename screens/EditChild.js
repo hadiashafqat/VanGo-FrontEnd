@@ -128,14 +128,14 @@ export default function EditChild() {
                 const imageResponse = await fetch(profilePicURI);
                 const imageBlob = await imageResponse.blob();
                 base64Data = await blobToB64(imageBlob);
-                setB64(base64Data);
             }
 
+            // console.log("B64: ",base64Data)
             const childData = {
                 child_id: child_ids,
                 pickUpLoc : pickupLoc,
                 dropOffLoc : DropOffLoc,
-                picture: b64,
+                picture: base64Data,
             };
         
             // Stringify the JSON data

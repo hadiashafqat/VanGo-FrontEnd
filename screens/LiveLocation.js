@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 import MapView, { Marker } from 'react-native-maps';
 import { StyleSheet, View, Image } from 'react-native';
 import { useNavigation, useRoute, useFocusEffect } from '@react-navigation/native';
@@ -6,11 +6,10 @@ import axios from 'axios';
 import { API_IP } from '../config';
 
 const LiveLocation = () => {
-    const navigation = useNavigation();
-    const route = useRoute();
+  const navigation = useNavigation();
+  const route = useRoute();
 
-    const { childID } = route.params;
-
+  const { childID } = route.params;
 
   const [mapRegion, setMapRegion] = useState({
     latitude: 33.5912,
@@ -26,8 +25,6 @@ const LiveLocation = () => {
   });
 
   const fetchLocationData = async () => {
-    
-
     try {
       const response = await axios.get(`${API_IP}/get_location/${childID}`);
       const data = response.data;
@@ -52,18 +49,6 @@ const LiveLocation = () => {
     }
   };
 
-  useEffect(() => {
-    // Fetch initial location data
-    fetchLocationData();
-
-    // Set up a timer to fetch data at regular intervals (e.g., every 1 second)
-    const intervalId = setInterval(fetchLocationData, 1000);
-
-    // Clear the interval when the component is unmounted
-    return () => clearInterval(intervalId);
-  }, []); // Empty dependency array ensures this effect runs once when the component mounts
-
-
   useFocusEffect(
     useCallback(() => {
       // Fetch initial location data
@@ -74,7 +59,7 @@ const LiveLocation = () => {
 
       // Clear the interval when the screen loses focus
       return () => clearInterval(intervalId);
-    }, [])
+    }, [childID])
   );
 
   return (
