@@ -12,7 +12,7 @@ import { auth } from '../config/firebase';
 import complaint from '../assets/icons/complaint.png';
 import logout from '../assets/icons/logout.png';
 import register from '../assets/icons/edit.png';
-import logo from '../assets/icons/VanGo Logo.png';
+import logo from '../assets/icons/logo.png';
 
 const {width, height} = Dimensions.get('window');
 
