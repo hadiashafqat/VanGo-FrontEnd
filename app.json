@@ -7,7 +7,7 @@
     "icon": "./assets/icons/logo.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/icons/logo.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -27,13 +27,15 @@
     "android": {
       "package": "com.example.VanGo", 
       "googleServicesFile": "./google-services.json",
+      "usesCleartextTraffic": true,
       "config": {
         "googleMaps": {
             "apiKey": "AIzaSyDz2DzpYHdURmO-51wsXxbc3wOF4QSizrA"
-        }
+        },
+        "cleartext": true
       },
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/icons/logo.png",
         "backgroundColor": "#ffffff"
       },
       "permissions": [
@@ -48,6 +50,14 @@
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "usesCleartextTraffic": true
+          }
+        }
+      ],
       [
         "expo-camera",
         {
